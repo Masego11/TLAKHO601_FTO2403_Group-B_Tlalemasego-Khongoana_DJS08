@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import bgImg from "../assets/images/about-hero.png";
 
-function About() {
+export default function About() {
     return (
         <div className="about-page-container">
             <img src={bgImg} className="about-hero-image" />
@@ -19,4 +18,3 @@ function About() {
         </div>
     );
 }
-export default About
