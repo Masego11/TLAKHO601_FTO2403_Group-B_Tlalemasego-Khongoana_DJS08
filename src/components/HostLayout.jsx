@@ -11,27 +11,27 @@ function HostLayout() {
         <nav className="host-nav">
             <NavLink to="/host"
                 end
-                stle={({ isActive}) => isActive ? activeStyles : null}
+                style={({ isActive}) => isActive ? activeStyles : null}
             >
                 Dashboard
             </NavLink>
             <NavLink to="/host/income"
                 end
-                stle={({ isActive}) => isActive ? activeStyles : null}
+                style={({ isActive}) => isActive ? activeStyles : null}
             >
                 Income
             </NavLink>
 
             <NavLink to="/host/vans"
                 end
-                stle={({ isActive}) => isActive ? activeStyles : null}
+                style={({ isActive}) => isActive ? activeStyles : null}
             >
                 Vans
             </NavLink>
 
             <NavLink to="/host/reviews"
                 end
-                stle={({ isActive}) => isActive ? activeStyles : null}
+                style={({ isActive}) => isActive ? activeStyles : null}
             >
                 Reviews
             </NavLink>
