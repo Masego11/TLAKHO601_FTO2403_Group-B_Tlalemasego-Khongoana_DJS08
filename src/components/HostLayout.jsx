@@ -22,6 +22,13 @@ function HostLayout() {
                 Income
             </NavLink>
 
+            <NavLink to="/host/vans"
+                end
+                stle={({ isActive}) => isActive ? activeStyles : null}
+            >
+                Vans
+            </NavLink>
+
             <NavLink to="/host/reviews"
                 end
                 stle={({ isActive}) => isActive ? activeStyles : null}
