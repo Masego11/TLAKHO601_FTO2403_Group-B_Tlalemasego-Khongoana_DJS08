@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 function HostVanDetail() {
     const { id } = useParams()
@@ -9,7 +9,7 @@ function HostVanDetail() {
         fetch(`/api/host/vans/${id}`)
         .then(res => res.json())
         .then(data => setCurrentVan(data.vans))
-    }, [])
+    }, [id])
 
     if (!currentVan) {
         return <h1>Loading...</h1>
@@ -33,6 +33,7 @@ function HostVanDetail() {
                             <h4>${currentVan.price}</h4>
                         </div>
                     </div>
+                    <Outlet />
                 </div>
         </section>
     )

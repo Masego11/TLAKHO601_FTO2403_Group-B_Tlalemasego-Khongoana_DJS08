@@ -17,15 +17,22 @@ createServer({
 
     routes() {
         this.namespace = "api"
-        this.logging = false
-
-        this.get("/vans", (schema, request) => {
-            return schema.vans.all()
-        })
         
+
+        this.get("/vans", (schema) => {
+            return schema.vans.all()
+        });
         this.get("/vans/:id", (schema, request) => {
             const id = request.params.id
             return schema.vans.find(id)
-        })
+        });
+        this.get("/host/vans", (schema) => {
+            return schema.vans.all()
+        });
+        this.get("/host/vans/:id", (schema, request) => {
+            const id = request.params.id
+            return schema.vans.find(id)
+        });
+
     }
 })
