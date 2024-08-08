@@ -2,19 +2,20 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
+import Login from './pages/Login.jsx';
 import Vans from "./pages/Vans/Vans.jsx";
+import NotFound from './pages/NotFound.jsx';
 import VanDetail from './pages/Vans/VansDetail.jsx';
-import Layout from './components/Layout.jsx';
 import Dashboard from "./pages/Host/Dashboard.jsx";
 import Income from "./pages/Host/Income.jsx";
 import Reviews from "./pages/Host/Reviews.jsx";
-import HostLayout from './components/HostLayout.jsx';
 import HostVanDetail from './pages/Host/HostVanDetail.jsx';
 import HostVans from './pages/Host/HostVans.jsx';
 import HostVanInfo from './pages/Host/HostVanInfo.jsx';
 import HostVanPhotos from './pages/Host/HostVanPhotos.jsx';
 import HostVanPricing from './pages/Host/HostVanPricing.jsx';
-import NotFound from './pages/NotFound.jsx';
+import Layout from './components/Layout.jsx';
+import HostLayout from './components/HostLayout.jsx';
 import "./index.css";
 import "./server.js";
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
           <Route path="vans/:id" element={<VanDetail />} />
+          <Route path="login" element={<Login />} />
           
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />

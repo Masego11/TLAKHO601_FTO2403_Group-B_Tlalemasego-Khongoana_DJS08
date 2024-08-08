@@ -28,7 +28,9 @@ function Header() {
         >
           Vans
         </NavLink>
-
+        <Link to="Login" className="login-link">
+            <img src="/src/assets/images/avatar-icon.png" className="login-icon"/>
+        </Link>
         </nav>
 </header>
   )
