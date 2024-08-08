@@ -16,6 +16,7 @@ import HostVanPhotos from './pages/Host/HostVanPhotos.jsx';
 import HostVanPricing from './pages/Host/HostVanPricing.jsx';
 import Layout from './components/Layout.jsx';
 import HostLayout from './components/HostLayout.jsx';
+import AuthRequired from './components/AuthRequired.jsx';
 import "./index.css";
 import "./server.js";
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="vans/:id" element={<VanDetail />} />
           <Route path="login" element={<Login />} />
           
+        <Route element={<AuthRequired />}></Route>
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
