@@ -1,9 +1,9 @@
 import { Outlet, Navigate } from "react-router-dom"
 
  function AuthRequired() {
-    const authenticated = false
+    const isLoggedIn = localStorage.getItem("loggedin")
     
-    if (!authenticated) {
+    if (!isLoggedIn) {
         return (
             <Navigate 
                 to="/login" 

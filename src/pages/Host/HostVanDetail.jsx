@@ -31,7 +31,10 @@ function HostVanDetail() {
         return <h1>There was an error: {error.message}</h1>
     }
 
+    if (!currentVan) {
+        return <h1>No van found</h1>
 
+    }
 
     const activeStyles = {
         fontWeight: "bold",
@@ -39,10 +42,6 @@ function HostVanDetail() {
         color: "#161616"
     }
 
-
-    if (currentVan) {
-        return <h1>Loading...</h1>
-    }
     return(
         <section>
             <Link to=".."
@@ -70,12 +69,10 @@ function HostVanDetail() {
                             Details
                         </NavLink>
                         <NavLink to="pricing"
-                        end
                         style={({ isActive}) => isActive ? activeStyles : null}>
                             Pricing
                         </NavLink>
                         <NavLink to="photos"
-                        end
                         style={({ isActive}) => isActive ? activeStyles : null}>
                             Photos
                         </NavLink>
