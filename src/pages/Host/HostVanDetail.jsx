@@ -1,8 +1,10 @@
+//The HostVanDetail component displays detailed information about a specific van
+//Imports 
 import React from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { getHostVans } from "../../../api";
 
-
+//Host hostVanDetail for executing state and effect hooks
 function HostVanDetail() {
     const [currentVan, setCurrentVan] = React.useState(null)
     const [loading, setLoading] = React.useState(false)
@@ -23,7 +25,7 @@ function HostVanDetail() {
         }
           loadVans()
     },[id])
-
+//Conditional rendering
     if (loading) {
         return <h1>Loading...</h1>
     }
@@ -35,20 +37,20 @@ function HostVanDetail() {
         return <h1>No van found</h1>
 
     }
-
+//Active styles 
     const activeStyles = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
     }
-
+// Component layout 
     return(
         <section>
             <Link to=".."
                 relative="path"
                 className="back-button">
                     &larr; <span>Back to all vans</span>
-                </Link>
+            </Link>
                 {currentVan && 
                 <div className="host-van-detail-layout-container">
                     <div className="host-van-detail">
@@ -62,20 +64,20 @@ function HostVanDetail() {
                         </div>
                     </div>
 
-                    <nav className="host-van-detail-nav">
-                        <NavLink to="."
+                 <nav className="host-van-detail-nav">
+                     <NavLink to="."
                         end
                         style={({ isActive}) => isActive ? activeStyles : null}>
                             Details
-                        </NavLink>
-                        <NavLink to="pricing"
+                    </NavLink>
+                    <NavLink to="pricing"
                         style={({ isActive}) => isActive ? activeStyles : null}>
                             Pricing
-                        </NavLink>
-                        <NavLink to="photos"
+                     </NavLink>
+                    <NavLink to="photos"
                         style={({ isActive}) => isActive ? activeStyles : null}>
                             Photos
-                        </NavLink>
+                    </NavLink>
                     </nav>
                     <Outlet context={{ currentVan}} />
                 </div>}
@@ -83,5 +85,5 @@ function HostVanDetail() {
     )
     
 }
-
+//Exporting the HostVanDetail component 
 export default HostVanDetail

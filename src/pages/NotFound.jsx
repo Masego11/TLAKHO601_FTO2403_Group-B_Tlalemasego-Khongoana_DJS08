@@ -1,3 +1,5 @@
+//The notfound component handles 404 errors
+//Imports 
 import { Link } from "react-router-dom";
 
 function NotFound() {
@@ -8,5 +10,5 @@ function NotFound() {
         </div>
     )
 }
-
+//Exporting the notfound component
 export default NotFound

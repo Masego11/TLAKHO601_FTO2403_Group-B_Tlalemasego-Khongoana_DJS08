@@ -1,6 +1,9 @@
+//About component provides information about services rendered 
+//Imports 
 import { Link } from "react-router-dom";
 import bgImg from "../assets/images/about-hero.png";
 
+//Displaying of page content 
  function About() {
     return (
         <div className="about-page-container">
@@ -18,4 +21,6 @@ import bgImg from "../assets/images/about-hero.png";
         </div>
     );
 }
+
+//Exporting about component
 export default About

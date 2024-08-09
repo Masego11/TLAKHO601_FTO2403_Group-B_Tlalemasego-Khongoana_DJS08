@@ -1,4 +1,4 @@
-
+//The app component sets up routes for for different pages and sections of the application 
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
@@ -20,14 +20,12 @@ import AuthRequired from './components/AuthRequired.jsx';
 import "./index.css";
 import "./server.js";
 
-
-
-
+//Routes 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout />}> 
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />

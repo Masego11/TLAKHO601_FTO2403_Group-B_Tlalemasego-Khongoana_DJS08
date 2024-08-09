@@ -1,11 +1,16 @@
+//The hostlayout component sets up a navigation bar specific to the host section and renders nested routes via the Outlet component
+// Imports 
 import { NavLink, Outlet } from "react-router-dom";
 
+// Active styles 
 function HostLayout() {
     const activeStyles = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
     }
+
+// Navigation menu
     return (
         <>
         <nav className="host-nav">
@@ -36,8 +41,10 @@ function HostLayout() {
                 Reviews
             </NavLink>
         </nav>
-        <Outlet />
+        <Outlet /> 
         </>
     )
 }
+
+// Exporting HostLayout component 
 export default HostLayout

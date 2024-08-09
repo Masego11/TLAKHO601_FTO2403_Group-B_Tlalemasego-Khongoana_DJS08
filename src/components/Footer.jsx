@@ -1,5 +1,5 @@
 
-
+//Footer component returns a simple footer element
 function Footer() {
     return(
         <footer>&#169; 2022 #VANLIFE</footer>

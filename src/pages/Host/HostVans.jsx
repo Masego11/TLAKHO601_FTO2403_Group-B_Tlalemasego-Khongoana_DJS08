@@ -1,7 +1,10 @@
+//The hostvans component displays a list of vans for a host 
+//Imports 
 import React from "react";
 import { Link } from "react-router-dom";
 import { getHostVans } from "../../../api";
 
+//HostVans function to execute state and effect hooks
 function HostVans() {
     const [vans, setVans] = React.useState([]);
     const [loading, setLoading] = React.useState(false);
@@ -22,6 +25,7 @@ function HostVans() {
         loadVans();
     }, []);
 
+    //Conditional rendering 
     if (loading) {
         return <h1>Loading...</h1>;
     }
@@ -29,6 +33,7 @@ function HostVans() {
         return <h1>There was an error: {error.message}</h1>;
     }
 
+    //Rendering the list of vans 
     const hostVansEls = vans.map(van => (
         <Link to={van.id} key={van.id} className="host-van-link-wrapper">
             <div className="host-van-single">
@@ -41,6 +46,7 @@ function HostVans() {
         </Link>
     ));
 
+    //Final rendering 
     return (
         <section>
             <h1 className="host-vans-title">Your listed vans</h1>
@@ -55,4 +61,5 @@ function HostVans() {
     );
 }
 
+//Exporting of hostVans component 
 export default HostVans;

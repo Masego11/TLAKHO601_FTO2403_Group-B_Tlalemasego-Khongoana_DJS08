@@ -1,8 +1,10 @@
+//The vans component fetches and displays a list of vans 
+//Imports
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getVans } from "../../../api";
 
-
+// State and query parameters 
 function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vans, setVans] = React.useState([])
@@ -11,6 +13,7 @@ function Vans() {
 
     const typeFilter = searchParams.get("type")
 
+//Effect hook for fetching vans
     React.useEffect(() => {
         async function loadVans() {
             setLoading(true)
@@ -26,11 +29,12 @@ function Vans() {
           loadVans()
     },[])
 
+//Filtering of vans by type
     const displayedVans = typeFilter
     ? vans.filter(van => van.type === typeFilter)
     : vans
     
-
+//Rendering of van elements
     const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={van.id}
@@ -47,6 +51,7 @@ function Vans() {
     </div> 
     ))
 
+    //Function for handling of filter changes 
 function handleFilterChange(key, value) {
     setSearchParams(prevParams => {
         if (value === null) {
@@ -58,6 +63,7 @@ function handleFilterChange(key, value) {
     })
 }
 
+//Loading and error states
 if (loading) {
     return <h1>Loading...</h1>
 }
@@ -65,6 +71,7 @@ if (error) {
     return <h1>There was an error: {error.message}</h1>
 }
 
+//Rendering of the UI
  return (
     <div className="van-list-container">
         <h1>Explore our van options</h1>
@@ -98,5 +105,5 @@ if (error) {
     </div>
  ) 
 }
-
+//Exporting of vans components
 export default Vans

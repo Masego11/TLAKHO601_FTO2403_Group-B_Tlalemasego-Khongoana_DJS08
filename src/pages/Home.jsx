@@ -1,6 +1,8 @@
+//THE home component is an entry point to the website 
 import { Link } from "react-router-dom";
 
-export default function Home() {
+//Function returning Headline and description content 
+function Home() {
     return (
         <div className="home-container">
           <h1>You got the travel plans, we got the travel vans.</h1>
@@ -10,3 +12,5 @@ export default function Home() {
         
     )
 }
+//Exporting home component
+export default Home

@@ -1,12 +1,14 @@
+//Imports 
 import { Link, NavLink } from "react-router-dom";
 
+// Active styles 
 function Header() {
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",
     color: "#161616"
   }
-
+// Header structure with logo, navigation menu and logo link
   return(   
     <header>
       <Link className="site-logo" to="/">#VanLife</Link>
@@ -35,4 +37,6 @@ function Header() {
 </header>
   )
 }
+
+// Exporting the header component 
 export default Header
